@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+
+<title>W3-Playground</title>
+<meta name="viewport" content="width=device-width">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="css/default.css">
+<!--[if lt IE 8]>
+<style>
+.textareacontainer, .iframecontainer {width:48%;}
+.textarea, .iframe {height:800px;}
+#input-element, #output-element {height:700px;}
+.menu img {display:none;}
+</style>
+<![endif]-->
+
+<script type="text/javascript">
+(function() {
+  // without the fuzz the functionality of this page boils down to
+  // a few lines of javascript.
+  //
+  // ... and of course everything nicely wrapped in an anonymous 
+  // function call ...
+
+  function onReady(fn) {
+    /in/.test(document.readyState) ? setTimeout(function() {onReady(fn)},10): fn()
+  }
+
+  function init() {
+    document.getElementById("see-results").onclick = showResult;
+    showResult();
+  }
+
+  function showResult() {
+    var doc = document.getElementById('output-element').contentWindow.document;
+    doc.body.innerHTML = ""; // performs reset
+    doc.write(document.getElementById("input-element").value);
+    doc.close();
+  }
+
+  onReady(init);
+})();
+
+</script>
+<body>
+<!-- wrappers within containers within containers ... iieeeek ... -->
+<div class="container">
+  <div class="textareacontainer">
+    <div class="textarea">
+      <div style="overflow:auto;">
+        <div class="area-header">Edit This Code:</div>
+        <button class="input-button" type="button" id="see-results">See Result &rArr;</button>
+      </div>
+      <div class="textareawrapper">
+        <textarea autocomplete="off" class="code-input" id="input-element" spellcheck="false" wrap="logical">&lt;!DOCTYPE html&gt;
+&lt;html lang="en-US"&gt;
+&lt;head&gt;
+&lt;title&gt;Page Title&lt;/title&gt;
+&lt;meta charset="UTF-8"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;h1&gt;This is a Heading&lt;/h1&gt;
+&lt;p&gt;This is a paragraph.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</textarea>
+      </div>
+    </div>
+  </div>
+  
+  <div class="iframecontainer">
+    <div class="iframe">
+      <div style="overflow:auto;">
+        <div class="area-header">Result:</div>
+      </div>
+      <div class="iframewrapper">
+        <iframe id="output-element" class="result_output" name="view" frameborder="0"></iframe>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
