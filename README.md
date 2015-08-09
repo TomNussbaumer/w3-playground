@@ -12,4 +12,4 @@ This project is for educational purposes only. It's based on the [TryIt-Editor](
 
 **Features**
 
-Since the output frame is an iframe, you can prototype anything with it from HTML, CSS to javascript.
+Since the output frame is an iframe, you can prototype anything with it from HTML, CSS to Javascript.
