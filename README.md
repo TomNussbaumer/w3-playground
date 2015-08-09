@@ -13,3 +13,13 @@ This project is for educational purposes only. It's based on the [TryIt-Editor](
 **Features**
 
 Since the output frame is an iframe, you can prototype anything with it from HTML, CSS to Javascript.
+
+## The not-so-known Marvels of Github
+
+Github supports static hosting. The url to a static file looks like this:
+
+```
+https://rawgit.com/[user]/[repository]/[branch]/[filename.ext]
+```
+
+Wanna take w3-playground to a [testdrive](https://rawgit.com/TomNussbaumer/w3-playground/master/index.html)?
